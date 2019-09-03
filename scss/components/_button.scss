@@ -12,10 +12,14 @@ button {
     position: relative;
     @include transition(all 0.4s);
 
-
-
     &:hover {
-        @include translate(0, -1px);
+        cursor: pointer;
+
+        span {
+            &::before {
+                left: 0.5rem;
+            }
+        }
     }
 
     &--green {
@@ -26,15 +30,29 @@ button {
     &--arrow {
         padding-right: calc(70px + 1.5rem);
 
-        &:after {
-            content: '';
-            display: block;
-            background-color: $black;
-            height: 70px;
-            width: 70px;
+        span {
             position: absolute;
             right: 0;
             top: 0;
+            height: 70px;
+            width: 70px;
+            background-color: $black;
+
+            &::before {
+                border-style: solid;
+                border-width: 0.10em 0.10em 0 0;
+                content: '';
+                display: inline-block;
+                height: 0.45em;
+
+                position: relative;
+                top: 38%;
+                transform: rotate(45deg);
+                vertical-align: top;
+                width: 0.45em;
+                @include transition(all 0.4s);
+            }
+
         }
     }
 
