@@ -1,0 +1,41 @@
+button {
+    &:focus {
+        outline: none;
+    }
+}
+
+.btn {
+    padding: 1rem 1.5rem;
+    font-size: 2rem;
+    border: none;
+    height: 70px;
+    position: relative;
+    @include transition(all 0.4s);
+
+
+
+    &:hover {
+        @include translate(0, -1px);
+    }
+
+    &--green {
+        background-color: $green;
+        color: $white;
+    }
+
+    &--arrow {
+        padding-right: calc(70px + 1.5rem);
+
+        &:after {
+            content: '';
+            display: block;
+            background-color: $black;
+            height: 70px;
+            width: 70px;
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+    }
+
+}

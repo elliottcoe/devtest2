@@ -1,0 +1,104 @@
+.header {
+    height: 100vh;
+    width: 100vw;
+
+
+
+    h1 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        @include translate(-50%, -50%);
+        color: $white;
+        z-index: 10;
+        text-align: center;
+        font-weight: lighter;
+
+        span {
+            margin-top: 2rem;
+
+            span {
+                font-weight: bolder;
+            }
+        }
+
+    }
+
+    &__slider {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+
+        .slick-list,
+        .slick-track {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+        }
+
+        .slick-dots {
+            position: absolute;
+            display: block;
+            bottom: 2rem;
+            left: 50%;
+            @include translate(-50%, 0);
+
+            li {
+                display: inline-block;
+
+                &.slick-active {
+                    button {
+                        opacity: 1;
+                    }
+                }
+
+                button {
+                    font-size: 0;
+                    width: 4rem;
+                    height: 1px;
+                    margin: 1rem;
+                    border-radius: 0%;
+                    opacity: 0.5;
+                    @include transition(all 0.4s);
+                }
+            }
+        }
+
+        figure {
+            position: absolute;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            @include transition(all 0.4s);
+            transform: scale(1);
+
+            &.slick-active {
+                transform: scale(1.1);
+            }
+        }
+
+    }
+
+    &__buttons {
+        position: absolute;
+        left: 50%;
+        top: 70%;
+        z-index: 10;
+        @include translate(-50%, -40%);
+
+        .btn {
+            &:first-of-type {
+                margin-right: 2rem;
+            }
+        }
+    }
+
+}

@@ -1,0 +1,38 @@
+nav {
+    position: absolute;
+    top: 2rem;
+    left: 50%;
+    @include translate(-50%, 0);
+    z-index: 10;
+    width: 80%;
+    ul {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        @include translate(0, -50%);
+        li {
+            display: inline-block;
+            margin-right: 1.5rem;
+            &:last-of-type {
+                margin-right: 0;
+            }
+            &.active {
+                a {
+                    color: $green;
+                }
+            }
+            &:last-of-type {
+                border: 1px solid $green;
+                padding: 0.5rem 1rem;
+            }
+            a {
+                color: white;
+                text-decoration: none;
+                font-family: Raleway;
+                &:hover {
+                    color: $green;
+                }
+            }
+        }
+    }
+}
